@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ML Project</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400&display=swap" rel="stylesheet">
+
+  <style>
+    
+    *{
+      padding: 0%;
+      margin: 0%;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    .main{
+      display: flex;
+      height: 100vh;
+    }
+    .lodic-nav{
+      background-color: rgb(25, 25, 25);
+      color: white;
+      display: flex;
+      box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+     
+      
+    }
+    .nav-it{
+      padding-top: 20px;
+      padding-bottom: 20px;
+      padding-left: 45px;
+    }
+    .data{
+      width: 40%;
+      border-radius: 0px 40px 40px 0;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.407), rgb(0, 0, 0));
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      color: rgb(254, 254, 254);
+      background-image: url(https://images.unsplash.com/photo-1542353436-312f0e1f67ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=942&q=80) ;
+      background-size: cover;
+      box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+      
+    }
+    .data-head{
+      font-size: 60px;
+      padding-left: 30px;
+      background-color: rgba(0, 0, 0, 0.415);
+    }
+    .data-body{
+      font-size: 20px;
+      padding: 30px;
+      background-color: rgba(0, 0, 0, 0.244);
+      padding-bottom: 50px;
+      border-radius: 0px 0px 40px 0;
+    }
+    .logic{
+      /* background-color: aquamarine; */
+      font-size: 20px;
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+    }
+    .lodic-data{
+      padding: 50px;
+      margin-top: 60px;
+    }
+    .inp{
+      display: flex;
+      /* background-color: antiquewhite; */
+      /* flex-direction: column; */
+      padding: 50px;
+      padding-top: 0px;
+    }
+    .dt{
+      padding: 10px;
+      font-size: 20px;
+      width: fit-content;
+      border-radius: 0 10px 10px 0;
+      border-width: 0px;
+      /* background-color: antiquewhite; */
+      border-width: 1px;
+      background-color: rgb(25, 25, 25);
+      color: rgb(255, 255, 255);
+    }
+    /* .dt:hover{
+      background-color: aqua;
+    } */
+    
+    .dt-inp{
+      width: 80%;
+      border-radius: 10px 0 0 10px;
+      background-color: white;
+      color: rgb(25, 25, 25);
+      
+    }
+    .example{
+      /* background-color: aquamarine; */
+      display: flex;
+      margin-bottom: 35px;
+
+    }
+    .box{
+      /* background-color:bisque; */
+      width: 33%;
+      padding: 20px;
+      border-radius: 20px;
+      margin: 20px;
+
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+      
+    }
+    .box-add button{
+      width: fit-content;
+      height: fit-content;
+      padding: 5px;
+      padding-left: 12px;
+      padding-right: 12px;
+      margin-top: 10px;
+      border-radius: 20px;
+      border-width: 0ch;
+      font-size: 20px;
+      background-color: black;
+      color: white;
+    }
+    .ll{
+      padding-left: 50px;
+    }
+    
+
+  </style>
+
+</head>
+<body>
+  <div class="main">
+    <div class="data">
+      <div class="data-head">
+        Sentiment Pridicton
+      </div>
+      <div class="data-body">
+        Since humans express their thoughts and feelings more openly than ever before, sentiment analysis is fast becoming an essential tool to monitor and understand sentiment in all types of data.
+      </div>
+    </div>
+
+    <div class="logic">
+      <div class="lodic-nav">
+        <div class="nav-it">About Me</div>
+        <div class="nav-it">LinkedIn</div>
+        <div class="nav-it">GitHub</div>
+      </div>
+      <div class="lodic-data">
+        Sentiment analysis (or opinion mining) is a natural language processing (NLP) technique used to determine whether data is positive, negative or neutral. Sentiment analysis is often performed on textual data to help businesses monitor brand and product sentiment in customer feedback, and understand customer needs.
+      </div>
+      <!-- <div class="inp">
+        <input type="text" id="dt" class="dt dt-inp">
+        <button type="submit" class="dt">Submit</button>
+      </div> -->
+      <form action="/sub" method="POST" class="inp">
+        <input type="text" name="sen" placeholder="" id="dt" class="dt dt-inp" >
+        <button type="submit" class="dt">Submit</button>
+      </form>
+      <div class="ll">{{finalResult }}</div>
+      <div class="example">
+        <div class="box">
+          <div class="box-data"></div>
+          <div class="box-add">
+            <button>+</button>
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-data"></div>
+          <div class="box-add">
+            <button>+</button>
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-data"></div>
+          <div class="box-add">
+            <button>+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
+
+<script>
+
+  const fiels = document.querySelector('#dt');
+  const msg = ['a natural language processing (NLP) technique1','a natural language processing (NLP) technique 2','a natural language processing (NLP) technique'];
+  const msg_fil = document.querySelectorAll('.box-data');
+  const msg_btn = document.querySelectorAll('.box-add button');
+  msg_fil[0].innerHTML=msg[0];
+  msg_fil[1].innerHTML=msg[1];
+  msg_fil[2].innerHTML=msg[2];
+  msg_btn.forEach((a,b)=>{
+    msg_btn[b].addEventListener('click',()=>{
+    fiels.value=msg[b];
+    })
+  })
+
+  fiels.value='{{inalResult}}'
+
+</script>
